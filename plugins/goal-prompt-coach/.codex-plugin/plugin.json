@@ -1,15 +1,24 @@
 {
   "name": "goal-prompt-coach",
-  "version": "0.1.0+codex.20260602113626",
+  "version": "1.0.0+codex.20260602123735",
   "description": "Create ready-to-paste Codex /goal prompts from rough ideas.",
   "author": {
     "name": "dontcallmejames"
   },
+  "homepage": "https://github.com/dontcallmejames/codex-goal-prompt-coach",
+  "repository": "https://github.com/dontcallmejames/codex-goal-prompt-coach",
+  "license": "MIT",
+  "keywords": [
+    "codex",
+    "goal",
+    "prompt-coach",
+    "goals"
+  ],
   "skills": "./skills/",
   "interface": {
     "displayName": "Goal Prompt Coach",
     "shortDescription": "Turn rough ideas into strong Codex /goal prompts.",
-    "longDescription": "Goal Prompt Coach helps users turn vague or early ideas into auditable, ready-to-paste Codex /goal prompts with assumptions, clarifying questions, verification surfaces, constraints, iteration policy, blocked stop conditions, and final handoff expectations. Its behavior is distilled from the Codex Prompting Guide and Using Goals in Codex.",
+    "longDescription": "Goal Prompt Coach helps users turn vague or early ideas into auditable, ready-to-paste Codex /goal prompts with assumptions, clarifying questions, verification surfaces, constraints, iteration policy, blocked stop conditions, and final handoff expectations. It does not build the described thing; it only produces the prompt. Its behavior is distilled from the Codex Prompting Guide and Using Goals in Codex.",
     "developerName": "dontcallmejames",
     "category": "Productivity",
     "capabilities": [],

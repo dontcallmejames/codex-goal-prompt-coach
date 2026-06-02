@@ -106,4 +106,34 @@ describe("goal-prompt-coach plugin", () => {
     assert.ok(evaluation.missing.includes("verification surface"));
     assert.ok(evaluation.missing.includes("blocked stop condition"));
   });
+
+  it("keeps generated prompts paste-ready for Codex /goal", () => {
+    for (const [, idea] of samples) {
+      const result = coachIdea(idea);
+
+      assert.equal(result.goal.length < 4000, true, `${idea}: ${result.goal.length}`);
+      assert.match(result.text, /ready-to-paste|Passes checklist/i, idea);
+    }
+  });
+
+  it("documents prompt-only coaching and worked examples at the marketplace root", () => {
+    const root = path.resolve(pluginRoot, "..", "..");
+    const rootReadme = fs.readFileSync(path.join(root, "README.md"), "utf8");
+    const license = fs.readFileSync(path.join(root, "LICENSE"), "utf8");
+    const skill = read("skills/goal-prompt-coach/SKILL.md");
+
+    assert.match(rootReadme, /does not build/i);
+    assert.match(rootReadme, /Claude Goal Prompt Coach/i);
+    assert.match(rootReadme, /Worked examples/i);
+    assert.match(license, /MIT License/);
+    assert.match(skill, /never build/i);
+
+    for (const file of [
+      "examples/01-make-my-app-faster.md",
+      "examples/02-research-my-competitors.md",
+      "examples/03-proof-run.md",
+    ]) {
+      assert.equal(fs.existsSync(path.join(root, file)), true, file);
+    }
+  });
 });

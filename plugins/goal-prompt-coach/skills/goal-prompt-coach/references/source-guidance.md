@@ -26,6 +26,23 @@ This plugin incorporates the two source documents as references and behavior:
 - Research goals should separate confirmed findings, approximate support, blocked claims, and remaining uncertainty.
 - Budget or blocker stops are not completion; report the evidence gathered and what would unlock progress.
 
+## Autonomous-Loop Failure Modes To Prevent
+
+- Halting for confirmation: include an iteration policy that tells Codex how to continue and when stopping is justified.
+- Infinite loops: include a verification surface and done criteria Codex can audit.
+- Plausible-but-wrong output: require Codex to verify by observation before claiming completion.
+
+## Evaluable Success Conditions
+
+Each condition should be something Codex can confirm by doing, not believing. Prefer commands, files, artifacts, logs, screenshots, metrics, or claim ledgers over subjective language.
+
+Examples:
+
+- "Make the app faster" should become a baseline plus target metric, such as p95 latency, LCP, or benchmark time.
+- "Add tests" should become a named test command and expected exit status.
+- "Document it" should become a file path plus required sections and example commands that run.
+- "Research this" should become a report or ledger where claims are sourced, marked unknown, or labeled blocked.
+
 ## Goal Prompt Coach Behavior
 
 The coach should:
@@ -35,7 +52,9 @@ The coach should:
 - ask at most 3 material clarifying questions,
 - tighten vague ideas instead of pretending they are auditable,
 - include an evaluation checklist for the goal contract,
-- preserve the original source guidance in generated goal wording.
+- preserve the original source guidance in generated goal wording,
+- never build the thing described by the user,
+- keep the generated `/goal` itself under 4000 characters when manually editing output.
 
 Important phrase inventory for output checks:
 
