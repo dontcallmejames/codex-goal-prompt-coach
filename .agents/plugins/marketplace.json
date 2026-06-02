@@ -1,0 +1,20 @@
+{
+  "name": "dontcallmejames",
+  "interface": {
+    "displayName": "dontcallmejames"
+  },
+  "plugins": [
+    {
+      "name": "goal-prompt-coach",
+      "source": {
+        "source": "local",
+        "path": "./plugins/goal-prompt-coach"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

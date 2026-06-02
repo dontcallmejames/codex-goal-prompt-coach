@@ -1,0 +1,9 @@
+{
+  "name": "goal-prompt-coach-plugin",
+  "version": "0.1.0",
+  "description": "Validation harness for the Goal Prompt Coach Codex plugin.",
+  "scripts": {
+    "test": "node --test"
+  },
+  "license": "MIT"
+}

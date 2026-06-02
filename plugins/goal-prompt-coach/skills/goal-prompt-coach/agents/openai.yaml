@@ -1,0 +1,4 @@
+interface:
+  display_name: "Goal Prompt Coach"
+  short_description: "Create ready-to-paste Codex /goal prompts."
+  default_prompt: "Use goal-prompt-coach to create a ready-to-paste Codex /goal prompt from this rough idea:"
